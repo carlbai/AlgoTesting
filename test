@@ -25,19 +25,19 @@ echo "Test case 3"
 java verify input3.txt output3.txt correct3.txt
 rm output3.txt
 
-# echo "============================="
-# ./run input301.txt output301.txt
-# sleep 1
-# echo "Test case 4"
-# java verify input301.txt output301.txt correct301.txt
-# rm output301.txt
+echo "============================="
+./run input301.txt output301.txt
+sleep 1
+echo "Test case 4"
+java verify input301.txt output301.txt correct301.txt
+rm output301.txt
 
-# echo "============================="
-# ./run input302.txt output302.txt
-# sleep 1
-# echo "Test case 5"
-# java verify input302.txt output302.txt correct302.txt
-# rm output302.txt
+echo "============================="
+./run input302.txt output302.txt
+sleep 1
+echo "Test case 5"
+java verify input302.txt output302.txt correct302.txt
+rm output302.txt
 
 echo "============================="
 ./run input204.txt output204.txt
