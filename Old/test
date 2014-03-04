@@ -1,0 +1,218 @@
+#!/bin/bash
+
+echo "Testing in progress... do not disturb... " 
+
+./build
+./run input1.txt output1.txt
+sleep 1
+
+echo "============================="
+echo "Test case 1"
+java verify input1.txt output1.txt correct1.txt
+rm output1.txt
+
+echo "============================="
+./run input2.txt output2.txt
+sleep 1
+echo "Test case 2"
+java verify input2.txt output2.txt correct2.txt
+rm output2.txt
+
+echo "============================="
+./run input3.txt output3.txt
+sleep 1
+echo "Test case 3"
+java verify input3.txt output3.txt correct3.txt
+rm output3.txt
+
+echo "============================="
+./run input301.txt output301.txt
+sleep 1
+echo "Test case 4"
+java verify input301.txt output301.txt correct301.txt
+rm output301.txt
+
+echo "============================="
+./run input302.txt output302.txt
+sleep 1
+echo "Test case 5"
+java verify input302.txt output302.txt correct302.txt
+rm output302.txt
+
+echo "============================="
+./run input204.txt output204.txt
+sleep 1
+echo "Test case 204"
+java verify input204.txt output204.txt correct204.txt
+rm output204.txt
+
+echo "============================="
+./run input205.txt output205.txt
+sleep 1
+echo "Test case 205"
+java verify input205.txt output205.txt correct205.txt
+rm output205.txt
+
+echo "============================="
+./run input206.txt output206.txt
+sleep 1
+echo "Test case 206"
+java verify input206.txt output206.txt correct206.txt
+rm output206.txt
+
+echo "============================="
+./run input207.txt output207.txt
+sleep 1
+echo "Test case 207"
+java verify input207.txt output207.txt correct207.txt
+rm output207.txt
+
+echo "============================="
+./run input208.txt output208.txt
+sleep 1
+echo "Test case 208"
+java verify input208.txt output208.txt correct208.txt
+rm output208.txt
+
+echo "============================="
+./run input209.txt output209.txt
+sleep 1
+echo "Test case 209"
+java verify input209.txt output209.txt correct209.txt
+rm output209.txt
+
+echo "============================="
+./run input210.txt output210.txt
+sleep 1
+echo "Test case 210"
+java verify input210.txt output210.txt correct210.txt
+rm output210.txt
+
+echo "============================="
+./run input211.txt output211.txt
+sleep 1
+echo "Test case 211"
+java verify input211.txt output211.txt correct211.txt
+rm output211.txt
+
+echo "============================="
+./run input212.txt output212.txt
+sleep 1
+echo "Test case 212"
+java verify input212.txt output212.txt correct212.txt
+rm output212.txt
+
+echo "============================="
+./run input213.txt output213.txt
+sleep 1
+echo "Test case 213"
+java verify input213.txt output213.txt correct213.txt
+rm output213.txt
+
+echo "============================="
+./run input214.txt output214.txt
+sleep 1
+echo "Test case 214"
+java verify input214.txt output214.txt correct214.txt
+rm output214.txt
+
+echo "============================="
+./run input214.txt output214.txt
+sleep 1
+echo "Test case 214"
+java verify input214.txt output214.txt correct214.txt
+rm output214.txt
+
+echo "============================="
+./run input215.txt output215.txt
+sleep 1
+echo "Test case 215"
+java verify input215.txt output215.txt correct215.txt
+rm output215.txt
+
+echo "============================="
+./run input216.txt output216.txt
+sleep 1
+echo "Test case 216"
+java verify input216.txt output216.txt correct216.txt
+rm output216.txt
+
+echo "============================="
+./run input217.txt output217.txt
+sleep 1
+echo "Test case 217"
+java verify input217.txt output217.txt correct217.txt
+rm output217.txt
+
+echo "============================="
+./run input218.txt output218.txt
+sleep 1
+echo "Test case 218"
+java verify input218.txt output218.txt correct218.txt
+rm output218.txt
+
+echo "============================="
+./run input219.txt output219.txt
+sleep 1
+echo "Test case 219"
+java verify input219.txt output219.txt correct219.txt
+rm output219.txt
+
+echo "============================="
+./run input220.txt output220.txt
+sleep 1
+echo "Test case 220"
+java verify input220.txt output220.txt correct220.txt
+rm output220.txt
+
+echo "============================="
+./run input221.txt output221.txt
+sleep 1
+echo "Test case 221"
+java verify input221.txt output221.txt correct221.txt
+rm output221.txt
+
+echo "============================="
+./run input222.txt output222.txt
+sleep 1
+echo "Test case 222"
+java verify input222.txt output222.txt correct222.txt
+rm output222.txt
+
+echo "============================="
+./run input223.txt output223.txt
+sleep 1
+echo "Test case 223"
+java verify input223.txt output223.txt correct223.txt
+rm output223.txt
+
+echo "============================="
+./run input224.txt output224.txt
+sleep 1
+echo "Test case 224"
+java verify input224.txt output224.txt correct224.txt
+rm output224.txt
+
+echo "============================="
+./run input225.txt output225.txt
+sleep 1
+echo "Test case 225"
+java verify input225.txt output225.txt correct225.txt
+rm output225.txt
+
+echo "============================="
+./run input226.txt output226.txt
+sleep 1
+echo "Test case 226"
+java verify input226.txt output226.txt correct226.txt
+rm output226.txt
+
+echo "============================="
+./run input227.txt output227.txt
+sleep 1
+echo "Test case 227"
+java verify input227.txt output227.txt correct227.txt
+rm output227.txt
+
+echo "============================="
+echo "Finish"

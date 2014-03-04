@@ -1,2 +1,0 @@
-#!/bin/sh
-java assignment3 <$1> $2 

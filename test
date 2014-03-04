@@ -1,13 +1,9 @@
 #!/bin/bash
 
-
-for i in {301..314}; do wget http://www.cs.utexas.edu/~geocklam/CS331/assignment3/input$i.txt; done
-for i in {301..314}; do wget http://www.cs.utexas.edu/~geocklam/CS331/assignment3/output$i.txt; done
-
-
 echo "Testing in progress... do not disturb... " 
+javac *.java
 
-for i in {301..314}; do time ./run input$i.txt myOutput$i.txt; echo $i; java verify input$.txt myOutput$i.txt output$i.txt; rm myOutput$i;done
+for i in {301..314}; do time ./run input$i.txt myOutput$i.txt; echo $i; java verify input$i.txt myOutput$i.txt output$i.txt ;done
 
 echo "============================="
 echo "Finish"

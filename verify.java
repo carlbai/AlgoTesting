@@ -147,6 +147,9 @@ public class verify
       int checkCorrectSum = 0;
       int maxCorrectWeight = -1;
       boolean correctness = true;
+      
+      int everyOther = 100;
+      int counter = 0;
       while(scResult.hasNextLine())
       {
         checkResultSum = 0;
@@ -161,90 +164,109 @@ public class verify
 
         maxResultWeight = Integer.parseInt(weightCombo[0]);
         maxCorrectWeight = Integer.parseInt(correctWeightCombo[0]);
-        // for(int i = 1; i < weightCombo.length; i ++)
-        // {
-        //   //i-1 is the room name
-        //   //weightCombo[i] is the bidder name
-        //   for(Bid b : bids)
-        //   {
-        //     //found the bidder's information
-        //     if(b.getName().equals(weightCombo[i]))
-        //     {
-        //       //Single bid
-        //       if(b.getType() == 1 && b.getSingleChoice() != (i-1))
-        //       {
-        //         //do nothing
-        //       }
-        //       else
-        //       {
-        //         for(Room r : rooms)
-        //         {
-        //           if((i-1) == Integer.parseInt(r.getName()))
-        //           {
-        //             if(b.getType() == 1)
-        //             {
-        //               if(b.getSingleChoice() != (i-1))
-        //               {
-        //                 //System.out.println("We have a problem");
-        //                 System.out.println(b.getSingleChoice());
-        //               }
-        //             }
-        //             checkResultSum = checkResultSum + b.getA() + b.getB() * r.getRating();  
-        //           }
-        //         }
-        //       }
-        //     }
-
-
-
-        //     if(b.getName().equals(correctWeightCombo[i]))
-        //     {
-        //       //Single bid
-        //       if(b.getType() == 1 && b.getSingleChoice() != (i-1))
-        //       {
-        //         //do nothing
-        //       }
-        //       else
-        //       {
-        //         for(Room r : rooms)
-        //         {
-        //           if((i-1) == Integer.parseInt(r.getName()))
-        //           {
-        //             if(b.getType() == 1)
-        //             {
-        //               if(b.getSingleChoice() != (i-1))
-        //               {
-        //                 //System.out.println("We have a problem");
-        //                 System.out.println(b.getSingleChoice());
-        //               }
-        //             }
-        //             checkCorrectSum = checkCorrectSum + b.getA() + b.getB() * r.getRating();  
-        //           }
-        //         }
-        //       }
-        //     }
-        //   }
-        // }
-        // System.out.println(maxResultWeight);
-        // System.out.println(checkCorrectSum);
-        //correctness = ((maxResultWeight == checkResultSum) && (maxCorrectWeight == checkCorrectSum));
-        correctness = (maxResultWeight == maxCorrectWeight);
-        if(correctness == false)
+        if(counter % everyOther == 0)
         {
-          System.out.println("\nyour output ");
-          System.out.println("weight " + maxResultWeight);
-          System.out.println("\ncorrect output ");
-          System.out.println("correct weight " + maxCorrectWeight);
-          System.out.println();
+          for(int i = 1; i < weightCombo.length; i ++)
+          {
+            //i-1 is the room name
+            //weightCombo[i] is the bidder name
+            for(Bid b : bids)
+            {
+              //found the bidder's information
+              if(b.getName().equals(weightCombo[i]))
+              {
+                //Single bid
+                if(b.getType() == 1 && b.getSingleChoice() != (i-1))
+                {
+                  //do nothing
+                }
+                else
+                {
+                  for(Room r : rooms)
+                  {
+                    if((i-1) == Integer.parseInt(r.getName()))
+                    {
+                      if(b.getType() == 1)
+                      {
+                        if(b.getSingleChoice() != (i-1))
+                        {
+                          //System.out.println("We have a problem");
+                          System.out.println(b.getSingleChoice());
+                        }
+                      }
+                      checkResultSum = checkResultSum + b.getA() + b.getB() * r.getRating();  
+                    }
+                  }
+                }
+              }
+
+
+
+              if(b.getName().equals(correctWeightCombo[i]))
+              {
+                //Single bid
+                if(b.getType() == 1 && b.getSingleChoice() != (i-1))
+                {
+                  //do nothing
+                }
+                else
+                {
+                  for(Room r : rooms)
+                  {
+                    if((i-1) == Integer.parseInt(r.getName()))
+                    {
+                      if(b.getType() == 1)
+                      {
+                        if(b.getSingleChoice() != (i-1))
+                        {
+                          //System.out.println("We have a problem");
+                          System.out.println(b.getSingleChoice());
+                        }
+                      }
+                      checkCorrectSum = checkCorrectSum + b.getA() + b.getB() * r.getRating();  
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
+        
+        //System.out.println(maxResultWeight);
+        //System.out.println(checkCorrectSum);
+        
+        if(counter % everyOther == 0)
+        {
+          correctness = ((maxResultWeight == checkResultSum) && (maxCorrectWeight == checkCorrectSum));
+          if(correctness == false)
+          {
+            System.out.println("\nyour output ");
+            System.out.println("weight " + maxResultWeight);
+            System.out.println("calculated weight " + checkResultSum);
+            System.out.println("\ncorrect output ");
+            System.out.println("correct weight " + maxCorrectWeight);
+            System.out.println("correct weight " + checkCorrectSum);
+            System.out.println();
+          }
+        }
+        else
+        {
+          correctness = (maxResultWeight == maxCorrectWeight);
+          if(correctness == false)
+          {
+            System.out.println("\nyour output ");
+            System.out.println("weight " + maxResultWeight);
+            System.out.println("\ncorrect output ");
+            System.out.println("correct weight " + maxCorrectWeight);
+            System.out.println();
+          }
+        }
+
+        counter ++;
       }
       if(correctness == true)
       {
         System.out.println("correct");
-      }
-      else
-      {
-        System.out.println("something is wrong");
       }
       scCorrect.close();
       scResult.close();
